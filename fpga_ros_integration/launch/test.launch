@@ -1,0 +1,15 @@
+<launch>
+  <arg name="enable_mavros" default="false" />
+
+  <group if="$(arg enable_mavros)">
+    <include file="$(find mavros)/launch/px4.launch">
+      <arg name="fcu_url" default="udp://:14540@127.0.0.1:14557"/>
+    </include>
+  </group>
+
+  <node name="rewarder" pkg="fpga_ros_integration" type="rewarder.py" output="screen"/>
+  <node name="control_node" pkg="fpga_ros_integration" type="control_node" output="screen"/>
+  <node name="logic_node" pkg="fpga_ros_integration" type="logic_node" output="screen"/>
+</launch>
+
+
