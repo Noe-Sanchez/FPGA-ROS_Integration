@@ -8,6 +8,7 @@
   </group>
 
   <node name="rewarder" pkg="fpga_ros_integration" type="rewarder.py" output="screen"/>
+  <node name="serial_node" pkg="fpga_ros_integration" type="serial_handler.py" output="screen"/>
   <node name="control_node" pkg="fpga_ros_integration" type="control_node" output="screen"/>
   <node name="logic_node" pkg="fpga_ros_integration" type="logic_node" output="screen"/>
 </launch>

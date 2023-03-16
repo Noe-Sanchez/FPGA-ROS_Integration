@@ -64,7 +64,7 @@ void serial_cb(const fpga_ros_integration::fpga_data::ConstPtr& msg){
 
 	if(isArmed){
 		current_ref.x = msg -> differential.x * vel;
-		current_ref.y = msg -> differential.y * vel;
+		current_ref.y = msg -> differential.y * 0.2;
 		current_ref.z = msg -> differential.z * vel;
 	}else{
 		current_ref.x = 0;
